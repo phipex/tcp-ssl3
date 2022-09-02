@@ -11,7 +11,7 @@ public class SSLCustomClientSmol {
    public SSLCustomClientSmol(String address, int port) throws Exception {
       Security.setProperty("jdk.tls.disabledAlgorithms", "");
       KeyStore keyStore = KeyStore.getInstance("JKS");
-      keyStore.load(new FileInputStream("/home/felipe/Documentos/proyectos/github.com/phipex/tcp-ssl3/tcpserver/src/main/resources/certs/client/clientKey.jks"),
+      keyStore.load(new FileInputStream("/home/felipe/Documentos/proyectos/github.com/phipex/tcp-ssl3/tcpserver/src/main/resources/certs/smol/clientTrustedCerts.jks"),
             "clientpass".toCharArray());
 
       KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
@@ -19,7 +19,7 @@ public class SSLCustomClientSmol {
 
       KeyStore trustedStore = KeyStore.getInstance("JKS");
       trustedStore.load(new FileInputStream(
-            "/home/felipe/Documentos/proyectos/github.com/phipex/tcp-ssl3/tcpserver/src/main/resources/certs/client/clientTrustedCerts.jks"), "clientpass"
+            "/home/felipe/Documentos/proyectos/github.com/phipex/tcp-ssl3/tcpserver/src/main/resources/certs/smol/clientTrustedCerts.jks"), "clientpass"
             .toCharArray());
 
       TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
